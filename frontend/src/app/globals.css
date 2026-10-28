@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap');
+@import "./frangipani.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  STUDIO FRANGIPANI — 2026 Brand Design Language
+  Yellow (#FED508) and Black (#050505) lead; quiet neutrals (Ivory #F7F6F2, Muted #65645E, Line #DAD8CF).
+  Source Serif 4 for headlines, Inter for body and interface.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 2%;
+
+    --card: 48 20% 96%;
+    --card-foreground: 0 0% 2%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 2%;
+
+    --primary: 48 99% 51%;
+    --primary-foreground: 0 0% 2%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 2%;
+
+    --muted: 48 20% 96%;
+    --muted-foreground: 48 4% 38%;
+
+    --accent: 48 99% 51%;
+    --accent-foreground: 0 0% 2%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 13% 86%;
+    --input: 44 4% 54%;
+    --ring: 48 99% 51%;
+
+    --radius: 2px;
+  }
+
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 48 99% 51%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 48 4% 65%;
+    --accent: 48 99% 51%;
+    --accent-foreground: 0 0% 2%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 16%;
+    --input: 0 0% 24%;
+    --ring: 48 99% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: #FFFFFF;
+    color: #050505;
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--serif);
+  }
+  ::selection {
+    background: #FED508;
+    color: #050505;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Hide Next.js development indicator overlay */
+nextjs-portal,
+[data-nextjs-toast-wrapper],
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}
